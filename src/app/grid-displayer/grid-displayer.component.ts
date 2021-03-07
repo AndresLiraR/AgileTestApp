@@ -44,10 +44,8 @@ export class GridDisplayerComponent implements OnInit {
 
   onChangePage(event: PageEvent) {
     const currentPage = +event.pageIndex + 1;
-    debugger;
     this.PhotosGridLoaderService.gridPhotosPagination(currentPage).subscribe(
       (resp: any) => {
-        debugger;
         this.imagesDataGrid = resp.pictures;
       },
       (err) => catchError
